@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <fieldset>
+    <legend>Add Employee</legend>
+    <p>
+    {{form.name.label}}{{form.name(size=32,autofocus=True)}}
+    {% for error in form.name.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    <p>
+    {{form.age.label}}{{form.age(size=32)}}
+    {% for error in form.age.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    <p>
+    {{form.type.label}}{{form.type(size=32)}}
+    {% for error in form.type.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    <p>
+    {{form.account_num.label}}{{form.account_num(size=32)}}
+    {% for error in form.account_num.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    
+    <p>
+    {{form.balance.label}}{{form.balance(size=32)}}
+    {% for error in form.balance.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    <p>{{form.submit()}}</p>
+    </fieldset>
+    <p><a href="{{url_for('menu')}}">Back to menu</a></p>
+</form>
+{% endblock %}

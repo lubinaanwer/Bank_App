@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <fieldset>
+    <legend>Debit Amount</legend>
+    <p>
+     {{form.id.label}}{{form.id(size=32, autofocus=True)}}
+    {% for error in form.id.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    <p>
+     {{form.acc.label}}{{form.acc(size=32, autofocus=True)}}
+    {% for error in form.acc.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    
+     <p>
+     {{form.debit.label}}{{form.debit(size=32)}}
+      {% for error in form.debit.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    
+    <p>{{form.submit()}}</p>
+    </fieldset>
+    <p><a href="{{url_for('menu')}}">Back to menu</a></p>
+
+    </form>
+    
+{% endblock %} 

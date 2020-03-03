@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <fieldset>
+    <legend>Deposit Amount</legend>
+    <p>
+    {{form.id.label}}{{form.id(size=32,autofocus=True)}}
+    {% for error in form.id.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    <p>
+    {{form.account_num.label}}{{form.account_num(size=32)}}
+    </p>
+    <p>
+    {{form.deposit.label}}{{form.deposit(size=32)}}
+    </p>
+    <p>{{form.submit()}}</p>
+    </fieldset>
+    <p><a href="{{url_for('menu')}}">Back to menu</a></p>    
+</form>
+{% endblock %}

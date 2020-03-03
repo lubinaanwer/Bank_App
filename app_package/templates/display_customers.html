@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<fieldset>
+<legend>Display Customer</legend>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Type</th>
+        <th>Account Number</th>
+        <th>Balance</th>
+   </tr>
+   {% for customer in customers %}
+        <tr>
+            <td>{{customer.id}}</td>
+            <td>{{customer.name}}</td>
+            <td>{{customer.age}}</td>
+            <td>{{customer.type}}</td>
+            <td>{{customer.account_num}}</td>
+            <td>{{customer.balance}}</td>
+        </tr>
+    {% endfor %}
+</table>
+</fieldset>
+<p><a href="{{url_for('menu')}}">Back to menu</a></p>
+{% endblock %}

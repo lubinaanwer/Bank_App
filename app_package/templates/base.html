@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% if title %}
+                {{title}}
+            {% else %}
+                Welcome to FlaskTest
+            {% endif %}
+        </title>
+        <link rel="stylesheet" href="/static/css/login.css">
+        <link rel="icon" href="/static/images/favicon.png">
+        
+    </head>
+    <body>
+    
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+        {% for message in messages %}
+            <li>{{message}}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+    </body>
+</html>
